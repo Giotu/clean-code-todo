@@ -55,11 +55,11 @@ const editTask = function () {
       editInput.focus();
       return;
     }
-    label.innerText = editValue;
-    editBtn.innerText = "Edit";
+    label.textContent = editValue;
+    editBtn.textContent = "Edit";
   } else {
-    editInput.value = label.innerText;
-    editBtn.innerText = "Save";
+    editInput.value = label.textContent;
+    editBtn.textContent = "Save";
   }
 
   listItem.classList.toggle("editMode");
