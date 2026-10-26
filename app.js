@@ -67,8 +67,7 @@ const editTask = function () {
 
 const deleteTask = function () {
   const listItem = this.parentNode;
-  const ul = listItem.parentNode;
-  ul.removeChild(listItem);
+  listItem.remove();
 };
 
 const handleCheckbox = function () {
