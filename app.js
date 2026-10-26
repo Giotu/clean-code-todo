@@ -23,6 +23,8 @@ const createNewTaskElement = function (taskText) {
   editInput.type = "text";
   checkBox.type = "checkbox";
   deleteButtonImg.src = "./remove.svg";
+  deleteButtonImg.alt = "";
+  deleteButton.setAttribute("aria-label", "Delete task");
   deleteButton.appendChild(deleteButtonImg);
 
   listItem.append(checkBox, label, editInput, editButton, deleteButton);
