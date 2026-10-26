@@ -11,10 +11,10 @@ const createElement = function (tag, { className, text } = {}) {
   return element;
 };
 
-const createNewTaskElement = function (taskString) {
+const createNewTaskElement = function (taskText) {
   const listItem = createElement("li");
   const checkBox = createElement("input");
-  const label = createElement("label", { text: taskString, className: "task" });
+  const label = createElement("label", { text: taskText, className: "task" });
   const editInput = createElement("input", { className: "task" });
   const editButton = createElement("button", { text: "Edit", className: "edit" });
   const deleteButton = createElement("button", { className: "delete" });
