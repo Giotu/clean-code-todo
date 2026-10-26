@@ -1,8 +1,8 @@
 const taskInput = document.getElementById("new-task");
 const addButton = document.getElementsByTagName("button")[0];
-const incompleteTaskHolder = document.getElementById("incompleteTasks");
-const completedTasksHolder = document.getElementById("completed-tasks");
-const taskItems = [...incompleteTaskHolder.children, ...completedTasksHolder.children];
+const incompleteTaskList = document.getElementById("incompleteTasks");
+const completedTasksList = document.getElementById("completed-tasks");
+const taskItems = [...incompleteTaskList.children, ...completedTasksList.children];
 
 const createElement = function (tag, { className, text } = {}) {
   const element = document.createElement(tag);
@@ -34,7 +34,7 @@ const addTask = function () {
   if (!inputValue) return;
   const listItem = createNewTaskElement(inputValue);
 
-  incompleteTaskHolder.appendChild(listItem);
+  incompleteTaskList.appendChild(listItem);
   bindTaskEvents(listItem);
 
   taskInput.value = "";
@@ -73,7 +73,7 @@ const deleteTask = function () {
 
 const handleCheckbox = function () {
   const listItem = this.parentNode;
-  const targetList = this.checked ? completedTasksHolder : incompleteTaskHolder;
+  const targetList = this.checked ? completedTasksList : incompleteTaskList;
   targetList.appendChild(listItem);
 };
 
