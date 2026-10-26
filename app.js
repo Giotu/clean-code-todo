@@ -2,6 +2,7 @@ const taskInput = document.getElementById("new-task");
 const addButton = document.getElementsByTagName("button")[0];
 const incompleteTaskHolder = document.getElementById("incompleteTasks");
 const completedTasksHolder = document.getElementById("completed-tasks");
+const taskItems = [...incompleteTaskHolder.children, ...completedTasksHolder.children];
 
 const createElement = function (tag, { className, text } = {}) {
   const element = document.createElement(tag);
@@ -88,10 +89,4 @@ const bindTaskEvents = function (taskListItem) {
   checkBox.addEventListener("change", handleCheckbox);
 };
 
-for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
-  bindTaskEvents(incompleteTaskHolder.children[i]);
-}
-
-for (let i = 0; i < completedTasksHolder.children.length; i++) {
-  bindTaskEvents(completedTasksHolder.children[i]);
-}
+taskItems.forEach((taskItem) => bindTaskEvents(taskItem));
